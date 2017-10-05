@@ -20,7 +20,7 @@ public class Shower : MonoBehaviour {
 			int numberOfItemsToDrop = Random.Range (minimumAmount, maximumAmount);
 			for(int i = 0; i < numberOfItemsToDrop; i++) {
 				GameObject showerItem = (GameObject)Instantiate (item, transform);
-				showerItem.transform.Translate (Random.Range (-.01f, .01f), Random.Range (-.01f, .01f), Random.Range (-.01f, .01f)); 
+				showerItem.transform.Translate (Random.Range (-1f, 1f), Random.Range (-10f, 10f), Random.Range (-1f, 1f)); 
 				showerItem.GetComponent<CollectableItem> ().value = Random.Range (1, 100);
 			}
 		}

@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour {
 		if (item != null) {
 			purse += item.value;
 			gameObject.GetComponent<AudioSource> ().PlayOneShot (collectCoin);
+
 			Destroy (item.gameObject);
 		}
 

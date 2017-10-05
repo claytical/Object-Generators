@@ -21,11 +21,13 @@ public class ChestGun : MonoBehaviour {
 		if(Input.GetAxis("Fire1") == 1) {
 			if (lastShotTime + timeBetweenShots <= Time.time) {
 				// Create the Bullet from the Bullet Prefab
-				GameObject bullet = (GameObject)Instantiate (projectile, transform.position, transform.rotation);
+
+				GameObject bullet = (GameObject)Instantiate (projectile, transform.position, Camera.main.transform.rotation);
+//				GameObject bullet = (GameObject)Instantiate (projectile, transform.position, transform.rotation);
 
 				// Add velocity to the bullet
 				bullet.GetComponent<Rigidbody> ().velocity = bullet.transform.forward * speed;
-
+//				bullet.GetComponent<Rigidbody>().velocity = Vector3.down * speed;
 				// Destroy the bullet after 5 seconds
 				Destroy (bullet, 5.0f);
 				lastShotTime = Time.time;
